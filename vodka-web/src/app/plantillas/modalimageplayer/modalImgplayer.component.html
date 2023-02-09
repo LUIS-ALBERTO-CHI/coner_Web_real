@@ -1,0 +1,53 @@
+<!-- [formGroup]="form"-->
+<form [formGroup]="formpost" (ngSubmit)="AddPhoto(formpost.value)">
+  <mat-dialog-content style="display: contents;">
+
+    <div style="text-align: center;">
+      <h2>Datos por actualizar</h2>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <!--Aqui ira el imput de imagen-->
+      <!-- <div class="col-md-4">
+                        <img src="" alt="" id="image-selected" height="150px" width="150px">
+                        <input #logo id="input-file" accept="image/*" class="inp1" type="file">
+                    </div> -->
+
+      <div class="col-2"></div>
+      <div class="col-8" style="text-align: -webkit-center;">
+        <div>
+          <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width:200px">
+        </div>
+        <div>
+          <input accept=".png,.jpeg,.jpg" formControlName="file"  id="file" type="file" style="color: transparent; border: 0px;padding-left: 35px;"
+            class="inp1 form-control" (change)="onFileChange($event)">
+        </div>
+        <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+          <div *ngIf="f['file'].errors && f['file'].errors['required']">El archivo es requerido.</div>
+      </div>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <!-- <input hidden formControlName="id" > -->
+      <div class="col-8" style="text-align: center;">
+        <br>
+        <mat-form-field style="display: block;">
+          <!--formControlName="Manager"-->
+          <mat-label>CURP</mat-label>
+          <input matInput placeholder="CURP" formControlName="curp" required>
+          <mat-error *ngIf="this.formpost.get('curp').hasError('required')">El curp es requerido</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions style="flex-direction: row-reverse;">
+    <div class="container">
+      <button mat-flat-button color="primary" type="submit">Guardar</button>
+      <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+</form>

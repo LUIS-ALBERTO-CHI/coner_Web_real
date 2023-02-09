@@ -1,0 +1,234 @@
+<!-- <div class="header pb-8 pt-5 pt-md-8">
+  <div class="container-fluid" style="background-color: #f0f3f4">
+    <table style="background-color: #f0f3f4">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td>
+            {{
+              season.s_id
+            }}
+          </td>
+          <td>
+            {{
+              season.s_name
+            }}
+          </td>
+          <td *ngFor="let item of season.teams">
+            {{
+              item.t_name
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+<div class="header pb-8 pt-5 pt-md-8">
+  <div class="container-fluid" style="background-color: #f0f3f4">
+    <hr style="border-color: white; margin-bottom: 20px; margin-top: -30px" />
+    <form [formGroup]="formpost">
+      <div class="container margincomponent">
+        <div class="row">
+          <div class="col-7">
+            <a
+              routerLink="/indexSeason"
+              class="btn btn-danger"
+              style="color: white"
+              mat-raised-button>
+              Regresar
+            </a>
+          </div>
+           <!-- <div class="col-5">
+            <a [routerLink]="routeNewPlayer" id="btn" class="btn btn-primary" style="color: white;" mat-raised-button>
+              Nuevo jugador
+            </a>
+            <a (click)="openDialogRelease()" class="btn btn-primary" style="color: white;" mat-raised-button>
+              Liberar
+            </a>
+            <a [routerLink]="routeCedula2" class="btn btn-primary" style="color: white;" mat-raised-button>
+              Cédula
+            </a>
+           <a [routerLink]="routeCedula" class="btn btn-primary" style="color: white;" mat-raised-button>
+              Reporte Cédula
+            </a>
+          </div> -->
+        </div>
+      </div>
+      <hr>
+
+          <form [formGroup]="form">
+            <div class="flex-container">
+              <div class="left">
+                <div class="form-group mb-0">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+
+                    <input
+                      formControlName="t_name"
+                      class="form-control"
+                      placeholder="Buscar"
+                      type="text"
+                      style="
+                        border-bottom-right-radius: 50px;
+                        border-top-right-radius: 50px;"/>
+                    <!-- <input
+                      class="form-control"
+                      (click)="load()"
+                      *ngIf="isShown"
+                      style="text-align: right; width: 42px"
+                      type="button"
+                      value="X"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- <form
+            style="margin-bottom: 10px"
+            [formGroup]="pagina"
+            *ngIf="pagination"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col-2">
+                  <input hidden formControlName="linkprev" />
+                  <div>
+                    <a
+                      type="button"
+                      style="color: dimgrey"
+                      (click)="obtenerLinkPrev()"
+                      class="btn nextprevious"
+                      ><i class="fas fa-arrow-left"></i> Anterior</a
+                    >
+                  </div>
+                </div>
+                <div class="col-8"></div>
+                <div class="col-2">
+                  <input hidden name="url" formControlName="link" />
+                  <div>
+                    <a
+                      type="button"
+                      style="color: dimgrey"
+                      (click)="obtenerLink()"
+                      class="btn nextprevious"
+                      >Siguiente <i class="fas fa-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form> -->
+
+          <br />
+          <br />
+          <div class="row">
+            <!-- <input hidden placeholder="" formControlName="id" /> -->
+            <div class="col-4">
+              <mat-form-field>
+                <!-- formControlName="Manager"-->
+                <mat-label>Nombre del torneo*</mat-label>
+                <input
+                  matInput
+                  placeholder="Nombre*"
+                  formControlName="s_name"/>
+              </mat-form-field>
+            </div>
+            <!-- <div class="col-4">
+          <mat-form-field>
+           
+            <mat-label>Representante*</mat-label>
+            <input matInput placeholder="Representante*" formControlName="Manager">
+          </mat-form-field>
+        </div>
+            <div class="col-4"></div> -->
+          </div>
+    </form>
+          <br />
+          <br />
+          <!-- <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+          <div class="container">
+            <div class="row">
+              <div class="col-2">
+                <input hidden formControlName="linkprev">
+                <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                      class="fas fa-arrow-left"></i> Anterior</a></div>
+              </div>
+              <div class="col-8"></div>
+              <div class="col-2">
+                <input hidden name="url" formControlName="link">
+                <div><a type="button"  style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                      class="fas fa-arrow-right"></i></a></div>
+              </div>
+            </div>
+          </div>
+
+        </form> -->
+
+          <div class="header-body">
+            <!-- Card stats -->
+            <div class="row container-center" *ngIf="season.teams">
+              <!--teamsLogin-->
+              <div *ngFor="let item of season.teams" class="tarjeta titulocard">
+                <div class="container">
+                  <div class="row" id="card">
+                    <div class="title col-7" style="align-self: center">
+                      {{ item.t_name }}
+                    </div>
+                    <div>
+                      <!-- <button (click)="openDialogEdit(item.id)"
+                        class="btn col-5"
+                        style="white-space: nowrap; padding: 13px">
+                        <i class="fa fa-pen"></i>
+                      </button> -->
+                      <!-- <button
+                        class="btn col-5"
+                        style="white-space: nowrap; padding: 8px">
+                        <i class="fa fa-trash"></i>
+                      </button> -->
+                    </div>
+                  </div>
+                  <hr style="margin-top: 0px" />
+                </div>
+                <div class="body">
+                  <!--Aqui ira el logo-->
+                  <div class="imagencard">
+                    <img
+                      style="width: 150px; max-height: 150px"
+                      src="{{ item.t_emblem }}"
+                      alt="sample"/>
+                  </div>
+
+                  <div class="bodycard">
+                    <label><b>Descripción:</b> {{ item.t_descr }}</label>
+                  </div>
+                  <div class="bodycard">
+                    <label><b>Cuidad:</b>{{ item.t_city }}</label>
+                  </div>
+                  <div class="bodycard">
+                    <label
+                      ><b>Número de jugadores:</b>
+                      {{
+                        item.numberPlayers > 0 ? item.numberPlayers : "Sin jugadores"
+                      }}</label>
+                  </div>
+                  <!--<div class="bodycard"><label>Pago: {{item.t_city}}</label></div>
+                <div class="bodycard"><label>Arbitraje: {{item.t_city}}</label></div>-->
+                </div>
+                <div class="pie">
+                  <!-- <img class="imgDetails" src="assets/img/details.png" /> -->
+                  <a>Detalles</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>
+</div>

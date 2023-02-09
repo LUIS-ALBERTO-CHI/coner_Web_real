@@ -1,0 +1,127 @@
+<mat-dialog-content style="display: contents;">
+
+    <div class="header pb-8 pt-5 pt-md-8">
+        <div class="container-fluid" style="background-color: #F0F3F4 ;">
+            <form [formGroup]="form" (ngSubmit)="addMatches()">
+                <hr style="border-color:white; margin-bottom:20px; margin-top:-30px;">
+                <div class="container margincomponent">
+                    <div class="row">
+                        <div class="col-8"></div>
+                        <div class="col-4 buttonconf" style="text-align: end;">
+                            <a (click)="addPlayerForm()" class="btn btn-primary" style="margin-right: 20px; color: white;"
+                                mat-raised-button>
+                                Agregar
+                            </a>
+    
+                            <button type="submit" class="btn btn-primary" mat-raised-button>
+                                Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-header border-0">
+                                <h3 class="mb-0">Partidas</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+    
+                                            <!-- <th scope="col"></th> -->
+                                            <th></th>
+                                            <th scope="col">Equipo 1</th>
+                                            <th scope="col">Equipo 2</th>
+                                            <th scope="col">Fecha</th>
+                                            <th scope="col">Hora</th>
+                                            <th scope="col">Lugar</th>
+                                            <th scope="col">Descripción</th>
+    
+                                        </tr>
+                                    </thead>
+                                    <tbody formArrayName="matches">
+                                        <tr *ngFor="let item of matches.controls; let i=index " [formGroupName]="i">
+    
+                                            <td> <input hidden formControlName="m_id" matInput></td>
+                                            <td>
+                                                <mat-form-field>
+                                                    <mat-select formControlName="team1_id" placeholder="Equipo 1" name="operacion">
+                                                        <mat-option (click)="updateTeams1(item.id)"  *ngFor="let item of teams1" [value]="item.id">
+                                                            {{item.t_name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field>
+                                                    <mat-select formControlName="team2_id" placeholder="Equipo 2" name="operacion">
+                                                        <mat-option (click)="updateTeams2(item.id)" *ngFor="let item of teams2" [value]="item.id">
+                                                            {{item.t_name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field appearance="legacy" [style.width.px]=100>
+                                                    <input formControlName="m_date" matInput placeholder="Nick">
+                                                </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field appearance="legacy" [style.width.px]=100>
+                                                    <input formControlName="m_time" matInput placeholder="Dorsal">
+                                                </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field appearance="legacy" [style.width.px]=100>
+                                                    <input formControlName="m_location" matInput placeholder="Dorsal">
+                                                </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <mat-form-field appearance="legacy" [style.width.px]=100>
+                                                    <input formControlName="m_descr" matInput placeholder="Descripción">
+                                                </mat-form-field>
+                                            </td>
+                                            <td>
+                                                <!-- id="btn-remove" type="button" class="btn" (click)="removeFormInput(field.name, i)" -->
+                                                <button (click)="removeFormInput(i)" id="btn-remove" class="btn col-2"
+                                                    style="white-space: nowrap;"><i class="fa fa-trash"></i></button>
+                                            </td>
+    
+    
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+    
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </form>
+    
+    
+            <!-- <input class="add-products-button" type="button" value="+" (click)="addProduct()"> -->
+            <!-- <div *ngFor="let item of test.controls; let i=index">
+                <div [formGroup]="childTest">
+                     <input type="text" formControlName="inputRandom">
+                </div>
+            </div> -->
+    
+        </div>
+    </div>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+        <!-- Table -->
+    
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions style="flex-direction: row-reverse;">
+    <div>
+        <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+    </div>
+</mat-dialog-actions>

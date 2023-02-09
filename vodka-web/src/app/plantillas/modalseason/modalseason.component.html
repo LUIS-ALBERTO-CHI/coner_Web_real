@@ -1,0 +1,194 @@
+<form [formGroup]="formpost" (ngSubmit)="addStorageSeason(formpost.value)">
+  <mat-dialog-content style="display: contents;">
+
+    <div style="text-align:center;">
+      <h3 style="color: black;">Configuraciones</h3>
+    </div>
+
+    <mat-tab-group [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)">
+      <mat-tab label="General">
+        <br>
+        <div class="container borderContainer">
+          <div class="row borderupmodal" style="background-color: #e06f85;">
+            <div style="text-align: center;" class="col-12">
+              <p style="color: white; font-weight: bold;">Descripción</p>
+            </div>
+          </div>
+          <div class="row borderdownmodal">
+            <div class="container">
+              <div class="textarea">
+                <mat-form-field>
+                  <textarea rows="4" cols="10" formControlName="s_descr" matInput placeholder="Desc"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-container switches">
+          <div class="left">
+            <input formControlName="s_groups" type="checkbox" id="1">
+            <label style="width: 250px;" for="1">
+              <span>Permitir grupos</span>
+              <span></span>
+            </label>
+          </div>
+          <div class="right">
+            <input formControlName="s_enbl_extra" (click)="toggleShow()" type="checkbox" id="2">
+            <label style="width: 250px;" for="2">
+              <span>Permitir tiempos extra</span>
+              <span></span>
+            </label>
+          </div>
+        </div>
+        <div class="container borderContainer">
+          <div class="row borderupmodal" style="background-color: #e06f85;">
+            <div style="text-align: center;" class="col-12">
+              <p style="color: white; font-weight: bold;">Puntos por victoria</p>
+            </div>
+          </div>
+          <div class="row borderdownmodal">
+            <div class="container">
+              <br>
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-away">Local</span>
+                    <input class="winpoint" formControlName="s_win_point">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-visit">Visitante</span>
+                    <input class="winpoint" formControlName="s_win_away">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="container borderContainer">
+          <div class="row borderupmodal" style="background-color: #e06f85;">
+            <div style="text-align: center;" class="col-12">
+              <p style="color: white; font-weight: bold;">Puntos por Empate</p>
+            </div>
+          </div>
+          <div class="row borderdownmodal">
+            <div class="container">
+              <br>
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-away">Local</span>
+                    <input class="winpoint" formControlName="s_draw_point">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-visit">Visitante</span>
+                    <input class="winpoint" formControlName="s_draw_away">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="container borderContainer">
+          <div class="row borderupmodal" style="background-color: #e06f85;">
+            <div style="text-align: center;" class="col-12">
+              <p style="color: white; font-weight: bold;">Puntos por Derrota</p>
+            </div>
+          </div>
+          <div class="row borderdownmodal">
+            <div class="container">
+              <br>
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-away">Local</span>
+                    <input class="winpoint" formControlName="s_lost_point">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-visit">Visitante</span>
+                    <input class="winpoint" formControlName="s_lost_away">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <!--ESTE UNICAMENTE DEBE APARECER SI PERMITIR TIEMPOS EXTRA ESTA EN ON-->
+        <div *ngIf="isShown" class="container borderContainer">
+          <div class="row borderupmodal" style="background-color: #e06f85;">
+            <div style="text-align: center;" class="col-12">
+              <p style="color: white; font-weight: bold;">Puntos en tiempo extra</p>
+            </div>
+          </div>
+          <div class="row borderdownmodal">
+            <div class="container">
+              <br>
+              <div class="row align-items-center">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-away">Local</span>
+                    <input class="winpoint" formControlName="s_extra_win">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-addon-visit">Visitante</span>
+                    <input class="winpoint" formControlName="s_extra_lost">
+                    <span class="input-group-addon">Pts</span>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+        <!------------------------------------------------------------------------>
+      </mat-tab>
+      <mat-tab label="Colores">
+
+      </mat-tab>
+    </mat-tab-group>
+
+
+    <br>
+
+
+
+  </mat-dialog-content>
+  <mat-dialog-actions style="flex-direction: row-reverse;">
+    <div>
+      <button mat-flat-button color="primary" type="submit">Guardar</button>
+      <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+
+
+</form>

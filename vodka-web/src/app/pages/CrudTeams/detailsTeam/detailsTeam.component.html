@@ -1,0 +1,152 @@
+<div class="header pb-8 pt-5 pt-md-8">
+
+  <div class="container-fluid" style="background-color: #F0F3F4 ;">
+
+    <hr style="border-color:white; margin-bottom:20px; margin-top:-30px;">
+    <form [formGroup]="formpost">
+      <div class="container margincomponent" >
+        <div class="row">
+          <div class="col-7 right">
+            <a  routerLink="/index" class="btn btn-danger" mat-raised-button>
+              Regresar
+            </a>
+          </div>
+          <div class="col-4 left" *ngIf="isShown2">
+            <a [routerLink]="routeNewPlayer" id="btn" class="btn btn-primary" style="color: white;" mat-raised-button>
+              Nuevo jugador
+            </a>
+            <a (click)="openDialogRelease()" class="btn btn-primary" mat-raised-button>
+              Liberar
+            </a>
+            <a [routerLink]="routeCedula2" class="btn btn-primary" mat-raised-button>
+              Cédula
+            </a>
+            <!-- <a [routerLink]="routeCedula" class="btn btn-primary" style="color: white;" mat-raised-button>
+              Reporte Cédula
+            </a> -->
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <form [formGroup]="form">
+        <div class="flex-container">
+          <div class="left">
+
+            <div class="form-group mb-0">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+
+                <input formControlName="t_name" (keyup.enter)="findPlayers()" class="form-control" placeholder="Buscar"
+                  type="text" style="border-bottom-right-radius: 50px; border-top-right-radius: 50px;">
+                <input class="form-control" (click)="load()" *ngIf="isShown" style="text-align: right; width: 42px;"
+                  type="button" value="X">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+
+      <!-- <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <input hidden formControlName="linkprev">
+              <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                    class="fas fa-arrow-left"></i> Anterior</a></div>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-2">
+              <input hidden  name="url" formControlName="link">
+              <div><a type="button"  style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                    class="fas fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
+
+      </form> -->
+
+      <br>
+      <br>
+      <div class="row container-center">
+        <input hidden placeholder="" formControlName="id">
+        <div class="col-4">
+          <mat-form-field>
+            <!--formControlName="Manager"-->
+            <mat-label>Nombre del equipo*</mat-label>
+            <input matInput placeholder="Nombre*" formControlName="t_name">
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field>
+            <!--formControlName="Manager"-->
+            <mat-label>Representante*</mat-label>
+            <input matInput placeholder="Representante*" formControlName="Manager">
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+
+    <br>
+    <br>
+    <!-- <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+          <div class="container">
+            <div class="row">
+              <div class="col-2">
+                <input hidden formControlName="linkprev">
+                <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                      class="fas fa-arrow-left"></i> Anterior</a></div>
+              </div>
+              <div class="col-8"></div>
+              <div class="col-2">
+                <input hidden name="url" formControlName="link">
+                <div><a type="button"  style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                      class="fas fa-arrow-right"></i></a></div>
+              </div>
+            </div>
+          </div>
+
+        </form> -->
+
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row container-center" *ngIf="playersTeam">
+
+        <div *ngFor="let item of playersTeam" class="tarjeta titulocard">
+          <div class="container">
+            <div class="row" id="card">
+              <!--BOTON PARA LA ACTUALIZACIÖN DE LA IMAGEN-->
+              <button (click)="openDialogPhoto(item.id)" class="btn col-3" style="white-space: nowrap;"><i
+                  class="fa fa-image" style="font-size:20px"></i></button>
+              <div class="col-5"></div>
+              <button (click)="openDialogUpdate(item.id)"  class="btn col-2" style="white-space: nowrap; margin-left: 1rem;"><i
+                  class="fa fa-pen"></i></button>
+
+            </div>
+            <hr style="margin-top:0px ;">
+          </div>
+          <div class="body">
+            <!--Aqui ira el logo-->
+            <div class="imagencard">
+              <img style="width: 150px; max-height: 150px;" src="{{item.photoName}}" alt="sample">
+            </div>
+            <br>
+            <div class="bodycard"><label><b>Nombre:</b> {{item.first_name + ' ' + item.last_name}}</label></div>
+            <!-- <div class="bodycard"><label><b>Apellido:</b> {{item.last_name}}</label></div> -->
+            <div class="bodycard"><label><b>Posición:</b> {{item.positionName}}</label></div>
+            <div class="bodycard"><label><b>Dorsal:</b> {{item.player_number}}</label></div>
+
+          </div>
+          <div class="pie">
+            <a (click)="openDialogDetails(item.id)">Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

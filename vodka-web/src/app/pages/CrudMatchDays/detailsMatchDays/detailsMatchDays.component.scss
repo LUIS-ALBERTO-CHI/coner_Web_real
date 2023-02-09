@@ -1,0 +1,209 @@
+.tarjeta{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:420px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border-radius:15px;
+    font-family: sans-serif;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    }
+    .titulo{
+    font-size: 24px;
+    padding: 10px 10px 0 10px;;
+    }
+    .cuerpo{
+    padding: 10px;
+    }
+    .pie{
+    background: #4C754E;
+    border-radius:0 0 15px 15px;
+    padding: 10px;
+    text-align:center;
+    cursor: pointer;
+    }
+    .pie a{
+    text-decoration: none;
+    color: white;
+    }
+    .pie a:after {
+    //position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: ""
+    }
+    .bodycard
+    {
+        margin-left: 20px
+    }
+    .imagencard
+    {
+        text-align: center;
+
+
+    }
+    .container-fluid{
+      background-color: #F0F3F4 ;
+      margin-left: 0;
+    }
+
+    .hr-buttons{
+      border-color:white;
+      margin-bottom:20px;
+      margin-top:-30px;
+    }
+
+    .logos{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .h4-text{
+      text-align: center;
+    }
+
+    .date{
+      margin-left: 50px;
+    }
+
+    .partido{
+      padding-bottom: 10px;
+      padding-top:10px;
+    }
+
+
+
+
+    .img-localteam{
+      width: 80px;
+      max-height: 80px;
+    }
+
+    .label-Nameteam1{
+      margin-left: 10px;
+    }
+
+    .label-Nameteam2{
+      margin-right: 10px;
+    }
+
+    .label-Namescore2{
+      margin-left: 10px;
+    }
+
+    .vs{
+      padding-top: 100px;
+    }
+
+    .titulocard
+    {
+        background-color: white
+    }
+    .margincomponent
+    {
+        margin-bottom: 20px;
+    }
+
+    .nextprevious
+    {
+        color: white;
+    }
+
+    #card{
+      background-color: #C1272E;
+      color: white;
+      border-top-left-radius:15px;
+      border-top-right-radius:15px;
+    }
+
+    #btn{
+      background-color: #289548;
+      margin-left:80%;
+      color: white;
+    }
+
+    .buttonUpdate{
+      white-space: nowrap;
+      margin-left: 1rem;
+      margin-left:10px;
+    }
+
+    .btn{
+      color: white;
+      margin-right:20px;
+    }
+
+    .container-center{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .fa{
+      color: white;
+    }
+    .input-group-text{
+        background: #fff;
+        color: #545e66;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+      }
+      .input-group-alternative{
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        box-shadow: 2px 2px 5px #999;
+      }
+      .form-control{
+        background: #fff;
+        color: #545e66;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+      .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: transparent;
+        justify-content: center;
+
+      }
+      .flex-container > .left {
+        background-color: transparent;
+        width: 700px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+        padding: 1px 0px;
+      }
+      .flex-container > .right {
+        background-color: transparent;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+      .form-control2{
+        background: #fff;
+        color: #545e66;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+
+      .verticalLine { border-left: thick solid #ff0000; }
+
+      .hr-vertical{
+        height:30vh;
+        width:.1vw;
+        border-width:0;
+        color:#545e66;
+        background-color:#545e66;
+       }

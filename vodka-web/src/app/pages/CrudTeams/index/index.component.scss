@@ -1,0 +1,204 @@
+
+.tarjeta{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:250px;
+    height: 340px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border-radius:15px;
+    font-family: sans-serif;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    }
+  .titulo{
+    font-size: 24px;
+    padding: 10px 10px 0 10px;;
+    }
+    .cuerpo{
+    padding: 10px;
+    }
+    .pie{
+    //background: #6699ff;
+    background: #939393;
+    border-radius:0 0 15px 15px;
+    padding: 10px;
+    text-align:center;
+    font-size: 17px;
+    }
+    .pie a{
+    text-decoration: none;
+    color: white;
+    }
+    .pie a:after {
+    //position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: ""
+    }
+
+    .imgDetails{
+      width: 1.5rem;
+      //min-width: 2rem;
+      cursor: pointer;
+      border: none;
+      margin-right: 5px;
+    }
+    .bodycard
+    {
+        margin-left: 20px
+    }
+    .imagencard
+    {
+        text-align: center;
+
+
+    }
+    .titulocard
+    {
+        background-color: white;
+    }
+    .margincomponent
+    {
+        margin-bottom: 20px;
+    }
+    .nextprevious
+    {
+        color: white;
+    }
+
+    #card{
+      background-color: #4ECF84;
+      color: white;
+      border-top-left-radius:15px;
+      border-top-right-radius:15px;
+    }
+
+    .container-center{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .scroll{
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    .scroll::-webkit-scrollbar-track {
+      // background: #C1272E;
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    .scroll::-webkit-scrollbar-thumb {
+      // background: #fff;
+      background: #4ECF84;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .scroll::-webkit-scrollbar-thumb:hover {
+      background: #9c9a9a;
+    }
+
+
+
+    #btn{
+      background-color: #4ECF84;
+    }
+
+    .fa{
+      color: white;
+    }
+
+    // #tooltip {
+    //   position: relative;
+    //   display: inline-block;
+    //   border-bottom: 1px dotted black;
+    // }
+
+    // #tooltip .tooltiptext {
+    //   visibility: hidden;
+    //   width: 120px;
+    //   background-color: black;
+    //   color: #fff;
+    //   text-align: center;
+    //   border-radius: 6px;
+    //   padding: 5px 0;
+    // }
+
+    // #tooltip .tooltiptext::after {
+    //   content: " ";
+    //   position: absolute;
+    //   top: 100%; /* At the bottom of the tooltip */
+    //   left: 50%;
+    //   margin-left: -5px;
+    //   border-width: 5px;
+    //   border-style: solid;
+    //   border-color: black transparent transparent transparent;
+    // }
+
+    // #tooltip:hover .tooltiptext {
+    //   visibility: visible;
+    // }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: transparent;
+      justify-content: center;
+
+    }
+
+    .flex-container > .right {
+      background-color: transparent;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    .flex-container > .left {
+      background-color: transparent;
+      width: 700px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+      padding: 1px 0px;
+    }
+
+    .form-control{
+      background: #fff;
+      color: #545e66;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    .input-group-alternative{
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      box-shadow: 2px 2px 5px #999;
+    }
+
+    .input-group-text{
+      background: #fff;
+      color: #545e66;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }

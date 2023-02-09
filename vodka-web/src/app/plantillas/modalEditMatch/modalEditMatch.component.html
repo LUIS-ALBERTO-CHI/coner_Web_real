@@ -1,0 +1,43 @@
+<form [formGroup]="formpost" (ngSubmit)="updateMatchDays(formpost.value)">
+  <mat-dialog-content>
+    <div style="text-align: center;">
+      <h2>Editar una Jornada</h2>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="row container" style="flex-wrap: nowrap;">
+      <div class="col-m-7 mr-4" style="text-align:center;">
+        <input hidden formControlName="id">
+
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Jornada" formControlName="m_name" required>
+          <mat-error *ngIf="this.formpost.get('m_name').hasError('required')">El nombre es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-m-1"></div>
+
+      <div class="">
+        <mat-form-field>
+          <mat-label>Descripción</mat-label>
+          <input matInput placeholder="Descripción" formControlName="m_descr" required>
+          <mat-error *ngIf="this.formpost.get('m_descr').hasError('required')">La descripción es requerida</mat-error>
+        </mat-form-field>
+
+
+      </div>
+    </div>
+  </mat-dialog-content >
+
+  <mat-dialog-actions style="flex-direction: row-reverse;">
+    <div>
+      <button mat-flat-button color="primary" type="submit">Guardar</button>
+      <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+</form>
+

@@ -1,0 +1,66 @@
+<form [formGroup]="formpost" (ngSubmit)="updatePlayer(formpost.value)">
+  <mat-dialog-content>
+    <div style="text-align: center;">
+      <h2>Editar un Jugador</h2>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="row" style="flex-wrap: nowrap;">
+      <div class="col-m-7" style="text-align:center;">
+        <input hidden formControlName="id">
+        <input hidden formControlName="team_id">
+
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre del Jugador" formControlName="first_name" required>
+          <mat-error *ngIf="this.formpost.get('first_name').hasError('required')">El nombre es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Alias</mat-label>
+          <input matInput placeholder="Nick del Jugador" formControlName="nick" required>
+          <mat-error *ngIf="this.formpost.get('nick').hasError('required')">El alias es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Curp</mat-label>
+          <input matInput placeholder="Curp del Jugador" formControlName="curp" required>
+          <mat-error *ngIf="this.formpost.get('curp').hasError('required')">El curp es requerido</mat-error>
+        </mat-form-field>
+
+      </div>
+      <div class="col-m-1"></div>
+      <div>
+        <mat-form-field>
+          <mat-label>Apellido</mat-label>
+          <input matInput placeholder="Apellido del Jugador" formControlName="last_name" required>
+          <mat-error *ngIf="this.formpost.get('last_name').hasError('required')">El apellido es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <!-- PEndiente revisar como dejar los datos que llegan del form-COntrol -->
+          <mat-select formControlName="position_id" [compareWith]="comparePosition"  [value]="player.position ? player.position.p_id : 0" placeholder="Posiciones" name="operacion">
+              <mat-option *ngFor="let pos of positions"  [value]="pos.p_id">
+                  {{pos.p_name}}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Estatus</mat-label>
+          <input readonly="true" matInput placeholder="Estatus del Jugador" formControlName="status">
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content >
+
+  <mat-dialog-actions style="flex-direction: row-reverse;">
+    <div>
+      <button mat-flat-button color="primary" type="submit">Guardar</button>
+      <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+</form>

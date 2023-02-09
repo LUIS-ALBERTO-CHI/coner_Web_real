@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VODKA - TORNEOS</title>
+</head> -->
+<div class="header pb-8 pt-5 pt-md-8" style="background-color: #f0f3f4 ;">
+
+    <div class="container-fluid" >
+      <div class="container margincomponent">
+        <div class="row">
+          <div class="col-10"></div>
+          <a routerLink="/createSeason" class="btn btn-primary " id="btn" style="color: white;" mat-raised-button>
+            <i class="fas fa-plus-circle"></i> Nuevo Torneo
+          </a>
+        </div>
+      </div>
+      <!-- <hr style="border-color:white; margin-bottom:20px; margin-top:-30px;"> -->
+      <form [formGroup]="form">
+        <div class="flex-container">
+          <div class="left">
+              <!--FILTRO  [formGroup]="form"  -->
+              <!-- <form [formGroup]="form"> -->
+
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                  </div>
+                  <!--FILTRO  formControlName="filtro"  -->
+                  <input formControlName="s_name" (keyup.enter)="findSeason()" class="form-control" placeholder="Buscar" type="text">
+                  <input class="form-control" (click)="load()" *ngIf="isShown" style="text-align: right; width: 42px;"
+                  type="button" value="X">
+                </div>
+          </div>
+        </div>
+      </form>
+        <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+          <div class="container">
+            <div class="row">
+              <div class="col-2">
+                <input hidden formControlName="linkprev">
+                <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                      class="fas fa-arrow-left"></i> Anterior</a></div>
+              </div>
+              <div class="col-8"></div>
+              <div class="col-2">
+                <input hidden name="url" formControlName="link">
+                <div><a type="button"  style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                      class="fas fa-arrow-right"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!-- </form> -->
+
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row container-center" *ngIf="seasons">
+            <div *ngFor="let item of seasons" class="tarjeta titulocard">
+              <div class="head">
+                <div class="row">
+                  <div class="title col-9" style="align-self: center;">{{item.s_name}}</div>
+                  <button (click)="openDialogEdit(item.s_id)" title="Editar" class="btn text-white" style="white-space: nowrap;"><i class="fa fa-pen"></i></button>
+                  <!-- <button class="btn col-2" style="white-space: nowrap;"><i class="fa fa-trash"></i></button> -->
+                </div>
+              </div>
+              <hr style="margin-top:0px ;">
+                <!--Aqui ira el logo-->
+                <!-- <div class="imagencard">
+                  <img style=" width: 150px" src="https://ligasabatinadefutbol.com.mx/media/bearleague/{{item.t_emblem}}"
+                    alt="sample">
+                </div> -->
+                  <div class="bodycard scroll">
+                      <div class="row" *ngFor="let team of item.teams">
+                    <div class="col-3" >
+                        <img style=" width: 32px" src="{{team.t_emblem}}" alt="sample">
+                    </div>
+                    <div class="col-9" id="teams">
+                      {{team.t_name}}
+                  </div>
+                    <!-- <div class="bodycard"><label>{{item.s_rounds}}</label></div> -->
+                  </div>
+                </div>
+              <hr style="margin-top:0px ;">
+              <div class="pie">
+                <a [routerLink]="['/detailSeason', item.s_id]">Detalles</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+<!-- </div> -->
+</html>

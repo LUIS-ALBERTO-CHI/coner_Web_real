@@ -1,0 +1,50 @@
+<mat-dialog-content>
+    <form [formGroup]="form">
+        <div class="row">
+
+            <div class="col-2"><label>equipo1</label></div>
+            <div class="col-2"><label>image</label></div>
+            <div class="col-4"><label> RESULTS</label></div>
+            <div class="col-2"><label>Image</label></div>
+            <div class="col-2"><label>equipo2</label></div>
+
+        </div>
+    </form>
+    <div class="row">
+        <label>equipo1</label>
+        <div class="col-6" *ngFor="let item of matcheventsTeam1">
+
+            <!-- <label>{{item.namePlayer}}</label> -->
+            <div class="row">
+                <!--FOREACH DE LOS GOLES CON NOMBRE DE QUIEN LO REALIZO y el tiempo que lo metio-->
+                <div class="col-2"> <label>{{item.team.t_name}}</label></div>
+                <div class="col-2"> <label>{{item.namePlayer}}</label></div>
+                <div class="col-2"><label>{{item.minutes}}</label></div>
+                <div class="col-2"> <label>{{item.event.e_name}}</label></div>
+            </div>
+
+
+        </div>
+        <div class="col-6" *ngFor="let item2 of matcheventsTeam2">
+
+            <!--FOREACH DE LOS GOLES CON NOMBRE DE QUIEN LO REALIZO y el tiempo que lo metio-->
+            <label>equipo2</label>
+            <label>Tajetas amarillas</label>
+            <label>Tajetas rojas </label>
+                <label>Goles</label>
+
+
+        </div>
+
+
+    </div>
+
+
+    <mat-dialog-actions style="flex-direction: row-reverse;">
+        <div>
+            <!-- <button mat-flat-button color="primary" type="submit">Guardar</button> -->
+            <!-- <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button> -->
+        </div>
+    </mat-dialog-actions>
+
+</mat-dialog-content>

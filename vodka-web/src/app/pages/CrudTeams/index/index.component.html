@@ -1,0 +1,103 @@
+<div class="header pb-8 pt-5 pt-md-8">
+
+  <div class="container-fluid" style="background-color: #F0F3F4 ;">
+
+    <hr style="border-color:white; margin-bottom:20px; margin-top:-30px;">
+    <div class="container margincomponent">
+      <div class="row" *ngIf="isShown2">
+        <div class="col-10"></div>
+        <button class="btn btn-primary " id="btn" style="color: white;" mat-raised-button (click)="openDialog()">
+          <i class="fas fa-plus-circle"></i> Nuevo Equipo
+        </button>
+      </div>
+    </div>
+
+
+    <form [formGroup]="form">
+      <div  class="flex-container">
+        <div class="left">
+          <!--FILTRO  [formGroup]="form"  -->
+          <!-- <form [formGroup]="form"> -->
+          <div class="form-group mb-0">
+            <div class="input-group input-group-alternative" *ngIf="isShown2">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+              </div>
+              <!--FILTRO  formControlName="filtro"  -->
+              <input formControlName="t_name" (keyup.enter)="findTeams($event)" class="form-control" placeholder="Buscar" type="text">
+              <input class="form-control" (click)="load()"  style="text-align: right; width: 42px;"
+                  type="button" value="X">
+            </div>
+          </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </form>
+      <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <input hidden formControlName="linkprev">
+              <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                    class="fas fa-arrow-left"></i> Anterior</a></div>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-2">
+              <input hidden name="url" formControlName="link">
+              <div><a type="button" style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                    class="fas fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+      <br>
+
+      <div class="header-body">
+        <!-- Card stats -->
+        <div class="row container-center"  *ngIf="teamsLogin">
+
+          <!--teamsLogin-->
+          <div *ngFor="let item of teamsLogin" class="tarjeta titulocard">
+            <div class="container">
+              <div class="row" id="card">
+                <div class="title col-7" style="align-self: center;">{{item.t_name}}</div>
+                <div>
+                  <button (click)="openDialogEdit(item.id)" title="Editar" class="btn col-5" id="tooltip"
+                    style="white-space: nowrap; padding: 13px;"><i class="fa fa-pen"></i>
+
+                    <!-- <span class="tooltiptext">Editar</span> -->
+                  </button>
+                  <button (click)="validationsPlayers(item.id)" title="Eliminar" class="btn col-5" id="tooltip"
+                    style="white-space: nowrap; padding: 8px;"><i class="fa fa-trash"></i>
+                    <!-- <span class="tooltiptext">Eliminar</span> -->
+                  </button>
+                </div>
+
+              </div>
+              <hr style="margin-top:0px ;">
+            </div>
+            <div class="body scroll">
+              <!--Aqui ira el logo-->
+              <div class="imagencard">
+                <img style=" width: 130px; max-height: 150px;" src="{{item.t_emblem}}"
+                  alt="sample">
+              </div>
+
+              <div class="bodycard"><label><b>Descripción:</b> {{item.t_descr}}</label></div>
+              <div class="bodycard"><label><b>Cuidad:</b>{{item.t_city}}</label></div>
+              <div class="bodycard"><label><b>Número de jugadores:</b> {{item.numberPlayers > 0 ? item.numberPlayers: 'Sin jugadores' }}</label></div>
+              <!--<div class="bodycard"><label>Pago: {{item.t_city}}</label></div>
+              <div class="bodycard"><label>Arbitraje: {{item.t_city}}</label></div>-->
+
+            </div>
+            <div class="pie">
+               <a [routerLink]="['/detailsTeam', item.id]">Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>

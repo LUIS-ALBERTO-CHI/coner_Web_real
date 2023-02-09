@@ -1,0 +1,22 @@
+<form [formGroup]="formpost" (ngSubmit)="RemoveTeams(formpost.value)">
+  <mat-dialog-content>
+    <input hidden formControlName="id" >
+    <input hidden formControlName="idMatch" >
+
+    <div style="text-align: center;">
+      <h2>¡ALERTA!</h2>
+    </div>
+        <div style="text-align: center;">
+            <p>
+              <b>¿Está seguro de dar de baja este registro?</b>
+            </p>
+        </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions style="flex-direction: row-reverse;">
+    <div class="container">
+        <button mat-flat-button color="primary" type="submit">Aceptar</button>
+        <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+</form>

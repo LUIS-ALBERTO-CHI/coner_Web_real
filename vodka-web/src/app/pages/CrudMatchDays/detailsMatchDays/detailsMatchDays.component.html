@@ -1,0 +1,207 @@
+<div class="header pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <hr class="hr-buttons">
+    <form [formGroup]="formMatchDay">
+      <div class="container margincomponent">
+        <div class="row">
+          <div class="col-1">
+            <a routerLink="/indexMatchDay" class="btn btn-danger" mat-raised-button>
+              Regresar
+            </a>
+          </div>
+          <div class="col-6">
+
+          </div>
+          <div class="col-4">
+            <a [routerLink]="routeNewMatch" id="btn" class="btn btn-primary" mat-raised-button>
+              Nueva Partida
+            </a>
+            <!-- <a (click)="openDialogRelease()" class="btn btn-primary" style="color: white;" mat-raised-button>
+                Liberar
+              </a> -->
+            <!-- <a [routerLink]="routeCedula2" class="btn btn-primary" style="color: white;" mat-raised-button>
+                Cédula
+              </a>
+              <a [routerLink]="routeCedula" class="btn btn-primary" style="color: white;" mat-raised-button>
+                Reporte Cédula
+              </a> -->
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- <form [formGroup]="form">
+        <div class="flex-container">
+          <div class="left">
+
+            <div class="form-group mb-0">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+
+                <input formControlName="t_name" (keyup.enter)="findMatches()" class="form-control" placeholder="Buscar"
+                  type="text" style="border-bottom-right-radius: 50px; border-top-right-radius: 50px;">
+                <input class="form-control" (click)="load()" *ngIf="isShown" style="text-align: right; width: 42px;"
+                  type="button" value="X">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form> -->
+
+      <!-- <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <input hidden formControlName="linkprev">
+              <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                    class="fas fa-arrow-left"></i> Anterior</a></div>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-2">
+              <input hidden name="url" formControlName="link">
+              <div><a type="button" style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                    class="fas fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
+
+      </form> -->
+
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-1"></div>
+        <input hidden placeholder="" formControlName="id">
+        <div class="col-4">
+          <mat-form-field>
+            <!--formControlName="Manager"-->
+            <mat-label>Nombre de la jornada</mat-label>
+            <input matInput placeholder="Nombre" formControlName="m_name">
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field>
+            <!--formControlName="Manager"-->
+            <mat-label>Descripción</mat-label>
+            <input matInput placeholder="Descripción" formControlName="m_descr">
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field>
+            <!--formControlName="Manager"-->
+            <mat-label>Estatus</mat-label>
+            <input matInput placeholder="Estatus" formControlName="is_playoff">
+          </mat-form-field>
+        </div>
+
+      </div>
+    </form>
+
+    <br>
+    <br>
+    <!-- <form style="margin-bottom: 10px;" [formGroup]="pagina" *ngIf="pagination">
+            <div class="container">
+              <div class="row">
+                <div class="col-2">
+                  <input hidden formControlName="linkprev">
+                  <div><a type="button" style="color:dimgrey;" (click)="obtenerLinkPrev()" class="btn nextprevious"><i
+                        class="fas fa-arrow-left"></i> Anterior</a></div>
+                </div>
+                <div class="col-8"></div>
+                <div class="col-2">
+                  <input hidden name="url" formControlName="link">
+                  <div><a type="button"  style="color:dimgrey;" (click)="obtenerLink()" class="btn nextprevious">Siguiente <i
+                        class="fas fa-arrow-right"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+          </form> -->
+
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row container-center" *ngIf="matchesxmatchDay">
+
+        <div *ngFor="let item of matchesxmatchDay" class="tarjeta titulocard">
+          <div class="container">
+            <div class="row" id="card">
+              <!--BOTON PARA LA ACTUALIZACIÖN DE LA IMAGEN-->
+              <!-- <button (click)="openDialogPhoto(item.id)" class="btn col-3" style="white-space: nowrap;"><i
+                  class="fa fa-image" style="font-size:20px"></i></button> -->
+
+              <div class="col-5"></div>
+              <div class="col-5"></div>
+              <div class="col-2">
+                <button (click)="openDialogUpdate(item.id)" id="buttonUpdate" class="btn col-2">
+                </button>
+               </div>
+
+            </div>
+
+          </div>
+          <div class="body">
+            <!--Aqui ira el logo-->
+
+            <br>
+            <div class="row logos">
+              <div class="col-5">
+                <h4 class="h4-text">Equipo local</h4>
+                <!--Aqui ira el logo-->
+                <div class="imagencard">
+                  <img class="img-localteam"
+                    src="{{item.logoTeam2}}" alt="sample">
+                </div>
+                <br>
+                <div><label class="label-Nameteam1"><b>{{item.nameTeam1}}</b></label></div>
+                <div><label class="label-Nameteam1">Puntos: <b>{{item.score1}}</b></label></div>
+                <!-- <div><label>Puntos extra:<b>{{item.bonus1}}</b></label></div> -->
+
+              </div>
+              <div class="col-2 vs">
+                <!-- <hr class="hr-vertical"> -->
+                <h3>VS</h3>
+              </div>
+              <div class="col-5">
+                <h4 class="h4-text">Equipo visitante</h4>
+                <!--Aqui ira el logo-->
+                <div class="imagencard">
+                  <img class="img-localteam"
+                    src="{{item.logoTeam1}}" alt="sample">
+                </div>
+                <br>
+                <div><label class="label-Nameteam2"><b>{{item.nameTeam2}}</b></label></div>
+                <div><label class="label-Namescore2">Puntos: <b>{{item.score2}}</b></label></div>
+                <!-- <div><label>Puntos extra:<b>{{item.bonus2}}</b></label></div> -->
+              </div>
+            </div>
+
+            <div class="row partido">
+              <div class="col-12"> <h3 class="h4-text">Datos del partido</h3></div>
+            </div>
+            <div class="row">
+              <div class="col-6"><label class="date"><b>Fecha y hora:</b> </label></div>
+              <!-- <div class="col-5"><label><b>Hora:</b> {{item.m_time}}</label></div> -->
+              <div  class="col-6"><label><b>Lugar:</b></label></div>
+            </div>
+            <div class="row">
+              <div class="col-6"><label class="date"><b></b> {{item.m_date + " " + item.m_time}}</label></div>
+              <!-- <div class="col-5"><label><b>Hora:</b> {{item.m_time}}</label></div> -->
+              <div  class="col-6"><label><b></b> {{item.m_location}}</label></div>
+
+            </div>
+
+          </div>
+          <div class="pie">
+            <!-- <a (click)="openDialog(item.id)">Detalles</a> -->
+            <a  >.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
