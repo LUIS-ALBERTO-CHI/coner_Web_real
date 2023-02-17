@@ -100,7 +100,7 @@ export class SidebarComponent implements OnInit {
       iconRegistry.addSvgIcon(
         "jornada",
         sanitizer.bypassSecurityTrustResourceUrl(
-          "assets/img/icons/sidebar/schedule.svg"
+          "assets/img/icons/sidebar/jornada.svg"
         )
       ),
       iconRegistry.addSvgIcon(
