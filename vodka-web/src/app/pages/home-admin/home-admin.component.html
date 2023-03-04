@@ -2,24 +2,17 @@
 <div class="header pb-8 pt-5 pt-md-8">
 
     <div class="container-fluid" style="background-color: #F0F3F4 ;">
-<!--   
-      <div class="row">
-        <div class="col-5"></div>
-        <div class="col-4">
-           <h1 style="color:black">TORNEO EN CURSO</h1>
-        </div>
-        <div class="col-3"></div>
-      </div> -->
 
+      
       <div class="row">
 
         <div class="col-1"></div>
         <div class="col-10">
-          
-  
+
+
           <br>
           <br>
-  
+
           <div class="row">
             <div class="col-5"></div>
             <div class="col-3">
@@ -30,34 +23,26 @@
           <br>
           <br>
           <div class="header-body">
-            <!-- Card stats -->
+
             <div class="row container-center" *ngIf="matchDays">
-  
+
               <div *ngFor="let item of matchDays" class="tarjeta" style="width:360px; height: auto;">
                 <div class="container">
                   <div class="row titulocard">
                     <div class="title col-9" style="align-self: center;">{{item.m_name}}</div>
-                    <!-- <button (click)="openDialogUpdate(item.id)" class="btn col-1" style="white-space: nowrap;"><i class="fa fa-pen"></i></button>
-                    <button (click)="openDialogDelete(item.id)" class="btn col-1" style="white-space: nowrap; padding: 8px;"><i class="fa fa-trash"></i></button> -->
-  
+
                   </div>
                   <hr style="margin-top:0px ;">
                 </div>
                 <div class="body" style="margin-left: 40px;margin-bottom: 20px; height: 100%;">
-                  <!--Aqui ira el logo-->
-                  <!-- <div class="imagencard">
-                    <img style="width: 150px; max-height: 150px;" src="https://ligasabatinadefutbol.com.mx/media/bearleague/{{item.t_emblem}}"
-                      alt="sample">
-                  </div> -->
-                  <!-- <div class="bodycard"><label>{{item.m_descr}}</label></div> -->
+
+
                   <div>
-                    <!-- <div class="row">
-                     
-                    </div> -->
+
+
                     <div class="row" *ngFor="let item of item.matches" style="margin-bottom:20px;">
-                      <!-- <div class="col-1" >
-                       
-                      </div> -->
+
+
                       <div class="col-1" style="border-top-style: solid;
                       border-right-style: solid;
                       border-bottom-style: solid;
@@ -78,216 +63,36 @@
                             src="https://ligasabatinadefutbol.com.mx/media/bearleague/{{item.logoTeam2}}" alt="sample">
                         </div>
                       </div>
-                      <!-- <div class="col-1" style="">
-                        {{item.published}}
-                      </div> -->
+
                       <div class="col-1" >
-                       
+
                       </div>
-  
+
                     </div>
-                  
-                  
-  
-  
+
+
+
+
                   </div>
                 </div>
-  
+
                 <div class="pie">
-                  <!-- <a [routerLink]="['/createMatch', item.id]">Partidas</a>
-                  | -->
-                  <!-- <p style="color:white;">|</p> -->
+
                   <a [routerLink]="['/detailsMatchDays', item.id]">Detalles</a>
                 </div>
-  
+
               </div>
             </div>
           </div>
-    
+
         </div>
         <div class="col-1"></div>
-        
-        
-        <!-- <div class="col-4">
-          <div class="header-body">
-           
-            <div class="row" *ngIf="teamsLogin" style="margin-top: 20px;">
-  
-       
-              <div *ngFor="let item of teamsLogin" class="tarjeta titulocard">
-  
-                <div class="body">
-                 
-                  <a [routerLink]="item.route">
-                    <div class="imagencard">
-                      <img style=" width: 100%"
-                        src="https://ligasabatinadefutbol.com.mx/media/bearleague/{{item.t_emblem}}" alt="sample">
-                    </div>
-                  </a>
-  
-                </div>
-               
-              </div>
-            </div>
-          </div>
-         
-  
-        </div>
-        <div class="col-4">
-        
-          <div class="container">
-   
-            <div class="bar-chart-block block">
-              
-              <div class='grafico bar-chart'>
-                <ul class='eje-y'>
-                  <li data-ejeY='60'></li>
-                  <li data-ejeY='45'></li>
-                  <li data-ejeY='30'></li>
-                  <li data-ejeY='15'></li>
-                  <li data-ejeY='0'></li>
-                </ul>
-                <ul class='eje-x'>
-                  <li data-ejeX='37'><i>España</i></li>
-                  <li data-ejeX='56'><i>Portugal</i></li>
-                  <li data-ejeX='25'><i>Italia</i></li>
-                  <li data-ejeX='18'><i>Grecia</i></li>
-                  <li data-ejeX='45'><i>EE.UU</i></li>
-                  <li data-ejeX='50'><i>México</i></li>
-                  <li data-ejeX='33'><i>Chile</i></li>
-                </ul>
-              </div>
-            </div>
-            <div class="bar-chart-block block">
-             
-              <div class='grafico bar-chart'>
-                <ul class='eje-y'>
-                  <li data-ejeY='60'></li>
-                  <li data-ejeY='45'></li>
-                  <li data-ejeY='30'></li>
-                  <li data-ejeY='15'></li>
-                  <li data-ejeY='0'></li>
-                </ul>
-                <ul class='eje-x'>
-                  <li data-ejeX='37'><i>España</i></li>
-                  <li data-ejeX='56'><i>Portugal</i></li>
-                  <li data-ejeX='25'><i>Italia</i></li>
-                  <li data-ejeX='18'><i>Grecia</i></li>
-                  <li data-ejeX='45'><i>EE.UU</i></li>
-                  <li data-ejeX='50'><i>México</i></li>
-                  <li data-ejeX='33'><i>Chile</i></li>
-                </ul>
-              </div>
-            </div>
-            <div class="bar-chart-block block">
-             
-              <div class='grafico bar-chart'>
-                <ul class='eje-y'>
-                  <li data-ejeY='60'></li>
-                  <li data-ejeY='45'></li>
-                  <li data-ejeY='30'></li>
-                  <li data-ejeY='15'></li>
-                  <li data-ejeY='0'></li>
-                </ul>
-                <ul class='eje-x'>
-                  <li data-ejeX='37'><i>España</i></li>
-                  <li data-ejeX='56'><i>Portugal</i></li>
-                  <li data-ejeX='25'><i>Italia</i></li>
-                  <li data-ejeX='18'><i>Grecia</i></li>
-                  <li data-ejeX='45'><i>EE.UU</i></li>
-                  <li data-ejeX='50'><i>México</i></li>
-                  <li data-ejeX='33'><i>Chile</i></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-  
-  
-        </div>
-  
-  
-        <div class="col-4">
-          
-          <div class="container">
-           
-            <div class="donut-chart-block block">
-              
-              <div class="donut-chart">
-                
-                <div id="porcion1" class="recorte">
-                  <div class="quesito ios" data-rel="21"></div>
-                </div>
-                <div id="porcion2" class="recorte">
-                  <div class="quesito mac" data-rel="39"></div>
-                </div>
-                <div id="porcion3" class="recorte">
-                  <div class="quesito win" data-rel="31"></div>
-                </div>
-                <div id="porcionFin" class="recorte">
-                  <div class="quesito linux" data-rel="9"></div>
-                </div>
-                
-                <p class="center-date">JUNE<br><span class="scnd-font-color">2013</span></p>
-              </div>
-        
-            </div>
-            <div class="donut-chart-block block">
-             
-              <div class="donut-chart">
-                
-                <div id="porcion1" class="recorte">
-                  <div class="quesito ios" data-rel="21"></div>
-                </div>
-                <div id="porcion2" class="recorte">
-                  <div class="quesito mac" data-rel="39"></div>
-                </div>
-                <div id="porcion3" class="recorte">
-                  <div class="quesito win" data-rel="31"></div>
-                </div>
-                <div id="porcionFin" class="recorte">
-                  <div class="quesito linux" data-rel="9"></div>
-                </div>
-               
-                <p class="center-date">JUNE<br><span class="scnd-font-color">2013</span></p>
-              </div>
-              
-            </div>
-            <div class="donut-chart-block block">
-              
-              <div class="donut-chart">
-               
-                <div id="porcion1" class="recorte">
-                  <div class="quesito ios" data-rel="21"></div>
-                </div>
-                <div id="porcion2" class="recorte">
-                  <div class="quesito mac" data-rel="39"></div>
-                </div>
-                <div id="porcion3" class="recorte">
-                  <div class="quesito win" data-rel="31"></div>
-                </div>
-                <div id="porcionFin" class="recorte">
-                  <div class="quesito linux" data-rel="9"></div>
-                </div>
-            
-                <p class="center-date">JUNE<br><span class="scnd-font-color">2013</span></p>
-              </div>
-             
-            </div>
-           
-          </div>
-  
-        
-  
-  
-        </div>
-   -->
-  
-  
+
       </div>
-  
-  
-  
-  
-  
+
+
+
+
+
     </div>
   </div>

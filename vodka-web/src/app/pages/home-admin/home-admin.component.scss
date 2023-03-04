@@ -129,7 +129,7 @@
 
 
     ///////////////////////////////////////////
-    
+
     /************************
 Css orignal https://codepen.io/jlalovi/details/bIyAr
 ************************/
@@ -137,7 +137,7 @@ Css orignal https://codepen.io/jlalovi/details/bIyAr
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 body {
   background: #1f253d;
@@ -214,13 +214,13 @@ border-top-right-radius: 5px;
         .os-percentages li {
           width: 75px;
           border-left: 1px solid #394264;
-          text-align: center;         
+          text-align: center;
           background: #50597b;
         }
           .os {
             margin: 0;
             padding: 10px 0 5px;
-            font-size: 15px;    
+            font-size: 15px;
           }
             .os.ios {
               border-top: 4px solid #e64c65;
@@ -273,7 +273,7 @@ border-top-right-radius: 5px;
           .month-data p {
             display: inline-block;
             margin: 0;
-            padding: 0 25px 15px;            
+            padding: 0 25px 15px;
             font-size: 16px;
           }
             .month-data p:last-child {
@@ -288,7 +288,7 @@ border-top-right-radius: 5px;
 /******************************************
 ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
 ESTILOS PROPIOS DE LOS GRÄFICOS
-↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ 
+↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
 GRAFICO LINEAL
 ******************************************/
 
@@ -338,7 +338,7 @@ GRAFICO LINEAL
   padding: .3rem .5rem;
   background: #50597B;
   border-radius: .5rem;
-  transform: rotate(45deg);  
+  transform: rotate(45deg);
 }
 [class^='eje-'] {
   position: absolute;
@@ -364,7 +364,7 @@ GRAFICO LINEAL
   position: relative;
   left: -2.5rem;
   top: -.5rem;
-} 
+}
 .eje-x li {
   width: 33%;
   float: left;
@@ -395,7 +395,7 @@ p.center-date {
   padding: 15% 0 0;
 }
 .center-date span.scnd-font-color {
- line-height: 0; 
+ line-height: 0;
 }
 .recorte {
     border-radius: 50%;
@@ -497,31 +497,31 @@ BAR-CHART
   box-shadow: 3px 0 rgba(0,0,0,.1), 3px -3px rgba(0,0,0,.1);
 }
 .bar-chart .eje-x li:nth-child(1):before {
-  background: #E64C65;  
+  background: #E64C65;
   height: 570%;
 }
 .bar-chart .eje-x li:nth-child(2):before {
-  background: #11A8AB;  
+  background: #11A8AB;
   height: 900%;
 }
 .bar-chart .eje-x li:nth-child(3):before {
-  background: #FCB150;  
+  background: #FCB150;
   height: 400%;
 }
 .bar-chart .eje-x li:nth-child(4):before {
-  background: #4FC4F6;  
+  background: #4FC4F6;
   height: 290%;
 }
 .bar-chart .eje-x li:nth-child(5):before {
-  background: #FFED0D;  
+  background: #FFED0D;
   height: 720%;
 }
 .bar-chart .eje-x li:nth-child(6):before {
-  background: #F46FDA;  
+  background: #F46FDA;
   height: 820%;
 }
 .bar-chart .eje-x li:nth-child(7):before {
-  background: #15BFCC;  
+  background: #15BFCC;
   height: 520%;
 }
 
