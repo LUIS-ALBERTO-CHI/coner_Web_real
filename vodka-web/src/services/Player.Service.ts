@@ -13,7 +13,6 @@ export class PlayerService extends BaseService<Player>{
   pathSetings: string;
   path: string;
 
-
   url = 'https://api.ligasabatinadefutbol.com.mx/api';
 
   constructor(public http: HttpClient) {
@@ -23,7 +22,6 @@ export class PlayerService extends BaseService<Player>{
     this.setingsStatus= "&status=Active"
     this.pathSetingName= "?first_name="
 
-
   }
 
   public registerPlayer(players: Player[]): Observable<Player> {
@@ -31,7 +29,6 @@ export class PlayerService extends BaseService<Player>{
       mergeMap(player => <Observable<Player>> this.http.post('https://api.ligasabatinadefutbol.com.mx/api/players', player))
     );
   }
-
 
   getImageBase64(imageUrl: string){
 

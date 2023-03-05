@@ -10,3 +10,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-progress-spinner.mat-warn circle,
+.mat-spinner.mat-warn circle {
+  stroke: #4ECF84;
+}
