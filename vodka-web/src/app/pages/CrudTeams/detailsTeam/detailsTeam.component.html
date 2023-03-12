@@ -6,24 +6,24 @@
     <form [formGroup]="formpost">
       <div class="container margincomponent" >
         <div class="row">
-          <div class="col-7 right">
-            <a  routerLink="/index" class="btn btn-danger" mat-raised-button>
+          <div class="col-5 right">
+            <a  routerLink="/index" class="btn btn-success" style="color: white;" mat-raised-button>
               Regresar
             </a>
           </div>
-          <div class="col-4 left" *ngIf="isShown2">
+          <div class="col-6 left" *ngIf="isShown2">
             <a [routerLink]="routeNewPlayer" id="btn" class="btn btn-primary" style="color: white;" mat-raised-button>
               Nuevo jugador
             </a>
-            <a (click)="openDialogRelease()" class="btn btn-primary" mat-raised-button>
+            <a (click)="openDialogRelease()" id="btn" class="btn btn-primary" style="color: white;" mat-raised-button>
               Liberar
             </a>
-            <a [routerLink]="routeCedula2" class="btn btn-primary" mat-raised-button>
+            <a [routerLink]="routeCedula2" id="btn" class="btn btn-primary" style="color: white;" mat-raised-button>
               Cédula
             </a>
-            <!-- <a [routerLink]="routeCedula" class="btn btn-primary" style="color: white;" mat-raised-button>
+            <a [routerLink]="routeCedula"  id="btn" class="btn btn-primary" style="color: white;" mat-raised-button>
               Reporte Cédula
-            </a> -->
+            </a>
           </div>
         </div>
       </div>

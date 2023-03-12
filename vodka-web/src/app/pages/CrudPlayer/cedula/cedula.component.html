@@ -13,15 +13,15 @@
         <div class="row">
 
           <div class="col-6">
-            <button class="btn btn-danger" [routerLink]="detailsTeam" type="submit" mat-raised-button>
+            <button class="btn btn-danger" id="btn" [routerLink]="detailsTeam" type="submit" mat-raised-button>
               Regresar
             </button>
           </div>
           <div class="col-6 buttonconf">
-            <button  class="btn btn-primary" (click)="AddPlayersActive()" type="submit" mat-raised-button>
+            <button  class="btn btn-primary" id="btn" (click)="AddPlayersActive()" type="submit" mat-raised-button>
               Guardar
             </button>
-            <a [routerLink]="routeCedula" class="btn btn-primary" style="color: white; padding-right: 10px; padding-left: 10px;" mat-raised-button>
+            <a [routerLink]="routeCedula" id="btn" class="btn btn-primary" style="color: white; padding-right: 10px; padding-left: 10px;" mat-raised-button>
               Reporte Cédula
             </a>
           </div>
@@ -32,7 +32,7 @@
       <div class="container">
         <div class="row">
           <div cdkDropList #ln1="cdkDropList" [cdkDropListData]="players" [cdkDropListConnectedTo]="ln2"
-            style="background-color: #C1272E ;" class="col-3 borderContainer">
+            style="background-color: #4ECF84 ;" class="col-3 borderContainer">
             <div style="text-align:center ; padding-top: 10px;">
               <h4 style="color:white;">Seleccionar</h4>
             </div>

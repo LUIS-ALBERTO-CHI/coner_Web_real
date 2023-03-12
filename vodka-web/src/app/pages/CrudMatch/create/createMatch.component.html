@@ -6,17 +6,17 @@
                 <div class="row">
                     <!-- <div class="col-1"></div> -->
                     <div class="col-9">
-                        <a routerLink="/indexMatchDay" class="btn btn-danger" style="color: white;" mat-raised-button>
+                        <a routerLink="/indexMatchDay" id="btn" class="btn btn-danger" style="color: white;" mat-raised-button>
                             Regresar
                         </a>
                     </div>
                     <div class="col-3 buttonconf" style="text-align: end;">
-                        <a (click)="addMatchForm()" class="btn btn-primary" style="margin-right: 20px; color: white;"
+                        <a (click)="addMatchForm()" id="btn" class="btn btn-primary" style="margin-right: 20px; color: white;"
                             mat-raised-button>
                             Agregar
                         </a>
 
-                        <button type="submit" class="btn btn-primary" mat-raised-button>
+                        <button type="submit" id="btn" class="btn btn-primary" mat-raised-button>
                             Guardar
                         </button>
                     </div>
@@ -115,7 +115,7 @@
         </form>
 
 
-       
+
 
     </div>
 </div>

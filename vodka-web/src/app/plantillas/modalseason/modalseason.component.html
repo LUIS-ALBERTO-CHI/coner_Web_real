@@ -9,7 +9,7 @@
       <mat-tab label="General">
         <br>
         <div class="container borderContainer">
-          <div class="row borderupmodal" style="background-color: #e06f85;">
+          <div class="row borderupmodal" style="background-color: #4ECF84;">
             <div style="text-align: center;" class="col-12">
               <p style="color: white; font-weight: bold;">Descripción</p>
             </div>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="container borderContainer">
-          <div class="row borderupmodal" style="background-color: #e06f85;">
+          <div class="row borderupmodal" style="background-color: #4ECF84;">
             <div style="text-align: center;" class="col-12">
               <p style="color: white; font-weight: bold;">Puntos por victoria</p>
             </div>
@@ -75,7 +75,7 @@
         <br>
 
         <div class="container borderContainer">
-          <div class="row borderupmodal" style="background-color: #e06f85;">
+          <div class="row borderupmodal" style="background-color: #4ECF84;">
             <div style="text-align: center;" class="col-12">
               <p style="color: white; font-weight: bold;">Puntos por Empate</p>
             </div>
@@ -108,7 +108,7 @@
         <br>
 
         <div class="container borderContainer">
-          <div class="row borderupmodal" style="background-color: #e06f85;">
+          <div class="row borderupmodal" style="background-color: #4ECF84;">
             <div style="text-align: center;" class="col-12">
               <p style="color: white; font-weight: bold;">Puntos por Derrota</p>
             </div>
@@ -141,7 +141,7 @@
         <br>
         <!--ESTE UNICAMENTE DEBE APARECER SI PERMITIR TIEMPOS EXTRA ESTA EN ON-->
         <div *ngIf="isShown" class="container borderContainer">
-          <div class="row borderupmodal" style="background-color: #e06f85;">
+          <div class="row borderupmodal" style="background-color: #4ECF84;">
             <div style="text-align: center;" class="col-12">
               <p style="color: white; font-weight: bold;">Puntos en tiempo extra</p>
             </div>
@@ -185,8 +185,8 @@
   </mat-dialog-content>
   <mat-dialog-actions style="flex-direction: row-reverse;">
     <div>
-      <button mat-flat-button color="primary" type="submit">Guardar</button>
-      <button mat-flat-button color="warn" [mat-dialog-close]="true">Cancelar</button>
+      <button mat-flat-button color="primary" id="btn" type="submit">Guardar</button>
+      <button mat-flat-button color="warn" id="btn" [mat-dialog-close]="true">Cancelar</button>
     </div>
   </mat-dialog-actions>
 

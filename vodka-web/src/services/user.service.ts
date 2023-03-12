@@ -17,10 +17,6 @@ export class UserService extends BaseService<User>{
     super(http);
     this.path = '/users';
   }
-
- 
-
-  
 }
 
 

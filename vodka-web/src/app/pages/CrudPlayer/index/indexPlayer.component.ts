@@ -14,6 +14,8 @@ import { element } from 'protractor';
 import { ModalEditPlayerComponent } from '../../../plantillas/modalEditPlayer/modalEditPlayer.component';
 import { flip } from '@popperjs/core';
 import { ModalDetailsPlayerComponent } from '../../../plantillas/modalDetailsPlayer/modalDetailsPlayer.component';
+import { ModalDeletePlayerComponent } from '../../../plantillas/modalDeletePlayer/modalDeletePlayer.component';
+
 
 @Component({
   selector: 'app-index-player',
@@ -103,7 +105,6 @@ export class IndexPlayerComponent implements OnInit {
 
     //nombre del formcontrolname
     this.formControlName();
-
     //Cualquier cambio que suceda se vea reflejado
     // this.form.valueChanges.subscribe(valores => {
     //   if (!valores) return;
@@ -414,4 +415,37 @@ openDialogRelease(): void {
       //element.photoName = prueba.ph_filename;
      });
   }
+
+
+openDialogDelete(idPlayer: number){
+    debugger
+    if (this.isLoginDialogOpen) {
+      return;
+    }
+    this.servicePlayer.detail(idPlayer).subscribe((player: Player) => {
+      if (this.isLoginDialogOpen) {
+        return;
+      }
+      this.isLoginDialogOpen = true;
+      const dialogRef = this.dialog.open(ModalDeletePlayerComponent,
+        {
+          width: '500px',
+          height: '200px',
+          data: player,
+          // panelClass: 'snackBarInfo'
+        });
+      if (dialogRef.getState() === MatDialogState.OPEN) {
+      }
+      dialogRef.afterClosed().subscribe(res => {
+        //console.log(res);
+        this.isLoginDialogOpen = false;
+        //window.location.reload();
+        //this.load();
+      });
+    })
+
+  }
+
 }
+
+

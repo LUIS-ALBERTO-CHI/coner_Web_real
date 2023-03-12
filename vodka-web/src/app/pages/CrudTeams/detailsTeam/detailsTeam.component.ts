@@ -156,10 +156,10 @@ export class DetailsTeamComponent implements OnInit {
 
   menuPermissions(role:string) {
     if (this.respLogin.role == "captain") {
-      this.isShown2 = true;
+      this.isShown2 = false;
       //this.isShown = false;
     } else if (this.respLogin.role == "admin") {
-      this.isShown2 = false;
+      this.isShown2 = true;
     }
   }
 
